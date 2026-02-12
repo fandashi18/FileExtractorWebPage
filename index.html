@@ -3,114 +3,194 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="FileExtractor - 轻松提取文件中的文本、图片与结构化内容。" />
-  <title>FileExtractor | 文件提取效率工具</title>
+  <title>FileExtractor - 智能文件内容提取工具</title>
+  <meta name="description" content="FileExtractor 帮助你快速提取文件中的关键内容，支持高效整理、导出与复用。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="bg-orb orb-a"></div>
-  <div class="bg-orb orb-b"></div>
+  <div class="page-glow glow-a"></div>
+  <div class="page-glow glow-b"></div>
 
-  <header class="hero">
-    <nav class="nav">
-      <div class="brand">
-        <span class="brand-dot"></span>
-        <span class="brand-name">FileExtractor</span>
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#hero" class="brand" aria-label="FileExtractor Home">
+        <span class="brand-mark"></span>
+        <span class="brand-text">FileExtractor</span>
+      </a>
+
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+          <span id="langLabel">EN</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-      <a class="nav-cta" href="#screenshots">查看演示</a>
-    </nav>
 
-    <div class="hero-content reveal">
-      <p class="eyebrow">macOS 文件提取工作流加速器</p>
-      <h1>把“手动复制粘贴”变成一键提取</h1>
-      <p class="hero-subtitle">
-        FileExtractor 将常见文件中的目标内容快速提取出来，减少重复劳动，让整理和处理文件更高效。
-      </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#video">观看视频</a>
-        <a class="btn btn-secondary" href="#features">功能亮点</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#features" data-i18n="nav.features">功能</a></li>
+        <li><a href="#workflow" data-i18n="nav.workflow">流程</a></li>
+        <li><a href="#screenshots" data-i18n="nav.screenshots">截图</a></li>
+        <li><a href="#video" data-i18n="nav.video">视频</a></li>
+        <li><a href="#download" class="nav-cta" data-i18n="nav.download">立即体验</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <p class="eyebrow" data-i18n="hero.eyebrow">FOR MACOS PRODUCTIVITY</p>
+        <h1 data-i18n="hero.title">把繁琐的文件提取工作，压缩成几秒</h1>
+        <p class="hero-desc" data-i18n="hero.desc" data-i18n-html="true">
+          从选择目录、筛选类型到提取结果预览，<br />FileExtractor 让你的文件处理流程更快、更清晰。
+        </p>
+        <div class="hero-buttons">
+          <a href="#video" class="btn btn-primary" data-i18n="hero.primary">观看演示</a>
+          <a href="#screenshots" class="btn btn-secondary" data-i18n="hero.secondary">查看界面</a>
+        </div>
+      </div>
+
+      <div class="hero-panel reveal">
+        <div class="panel-frame">
+          <img src="应用截图/主界面.png" alt="FileExtractor main screen" data-i18n-alt="hero.panelAlt" loading="eager" />
+        </div>
+        <div class="panel-metrics">
+          <div class="metric-card">
+            <strong data-i18n="hero.metric1.title">清晰步骤</strong>
+            <span data-i18n="hero.metric1.desc">从文件夹到结果一目了然</span>
+          </div>
+          <div class="metric-card">
+            <strong data-i18n="hero.metric2.title">提取直达</strong>
+            <span data-i18n="hero.metric2.desc">结果即时预览，便于后续处理</span>
+          </div>
+        </div>
       </div>
     </div>
   </header>
 
   <main>
-    <section id="video" class="section reveal">
-      <div class="section-head">
-        <p class="section-tag">Product Demo</p>
-        <h2>真实操作录屏</h2>
-      </div>
-      <div class="video-shell">
-        <video controls preload="metadata" poster="应用截图/主界面.png">
-          <source src="宣传视频/demo.mp4" type="video/mp4" />
-          <source src="宣传视频/录屏2026-02-12 21.09.50.mov" type="video/quicktime" />
-          你的浏览器不支持 video 标签。
-        </video>
+    <section class="section features" id="features">
+      <div class="container">
+        <h2 class="section-title reveal" data-i18n="features.title">核心能力</h2>
+        <p class="section-subtitle reveal" data-i18n="features.subtitle">为高频文件处理场景设计的提取体验</p>
+
+        <div class="feature-grid">
+          <article class="feature-card reveal">
+            <h3 data-i18n="features.card1.title">多类型筛选</h3>
+            <p data-i18n="features.card1.desc">按文件类型快速定位目标内容，减少人工筛查时间。</p>
+          </article>
+          <article class="feature-card reveal">
+            <h3 data-i18n="features.card2.title">结果集中展示</h3>
+            <p data-i18n="features.card2.desc">提取后的内容集中在统一视图，复制和复核更高效。</p>
+          </article>
+          <article class="feature-card reveal">
+            <h3 data-i18n="features.card3.title">流程反馈明确</h3>
+            <p data-i18n="features.card3.desc">关键状态清晰可见，降低误操作和重复尝试。</p>
+          </article>
+          <article class="feature-card reveal">
+            <h3 data-i18n="features.card4.title">轻量上手</h3>
+            <p data-i18n="features.card4.desc">界面直观，几乎不需要学习成本即可投入日常工作。</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="features" class="section reveal">
-      <div class="section-head">
-        <p class="section-tag">Core Benefits</p>
-        <h2>为什么选择 FileExtractor</h2>
-      </div>
-      <div class="feature-grid">
-        <article class="feature-card">
-          <h3>批量处理</h3>
-          <p>面向真实工作场景，支持对文件进行连续提取，显著减少重复操作时间。</p>
-        </article>
-        <article class="feature-card">
-          <h3>可视化流程</h3>
-          <p>从选择文件类型到查看提取结果，关键流程清晰可见，学习成本低。</p>
-        </article>
-        <article class="feature-card">
-          <h3>结果直达</h3>
-          <p>提取完成后立即展示结果，便于二次整理、复制和进一步处理。</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="screenshots" class="section reveal">
-      <div class="section-head">
-        <p class="section-tag">UI Preview</p>
-        <h2>应用界面预览</h2>
-      </div>
-      <div class="shot-grid">
-        <figure class="shot-item">
-          <img src="应用截图/主界面.png" alt="FileExtractor 主界面" loading="lazy" />
-          <figcaption>主界面</figcaption>
-        </figure>
-        <figure class="shot-item">
-          <img src="应用截图/主界面-选择文件夹后.png" alt="FileExtractor 选择文件夹后界面" loading="lazy" />
-          <figcaption>选择文件夹后</figcaption>
-        </figure>
-        <figure class="shot-item">
-          <img src="应用截图/选择文件类型界面-1.png" alt="FileExtractor 选择文件类型界面 1" loading="lazy" />
-          <figcaption>选择文件类型 1</figcaption>
-        </figure>
-        <figure class="shot-item">
-          <img src="应用截图/选择文件类型界面-2.png" alt="FileExtractor 选择文件类型界面 2" loading="lazy" />
-          <figcaption>选择文件类型 2</figcaption>
-        </figure>
-        <figure class="shot-item">
-          <img src="应用截图/文件提取结果界面.png" alt="FileExtractor 文件提取结果界面" loading="lazy" />
-          <figcaption>文件提取结果</figcaption>
-        </figure>
+    <section class="section workflow" id="workflow">
+      <div class="container">
+        <h2 class="section-title reveal" data-i18n="workflow.title">三步完成提取</h2>
+        <div class="workflow-steps">
+          <article class="step reveal">
+            <span class="step-index">01</span>
+            <h3 data-i18n="workflow.step1.title">选择文件夹</h3>
+            <p data-i18n="workflow.step1.desc">指定待处理目录，快速建立任务范围。</p>
+          </article>
+          <article class="step reveal">
+            <span class="step-index">02</span>
+            <h3 data-i18n="workflow.step2.title">选择文件类型</h3>
+            <p data-i18n="workflow.step2.desc">按目标内容过滤文件，减少无效处理。</p>
+          </article>
+          <article class="step reveal">
+            <span class="step-index">03</span>
+            <h3 data-i18n="workflow.step3.title">查看提取结果</h3>
+            <p data-i18n="workflow.step3.desc">立即预览输出内容，直接用于下一步工作。</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section cta reveal">
-      <h2>准备好体验更快的文件提取流程了吗？</h2>
-      <p>现在就通过视频和截图了解 FileExtractor 的完整工作方式。</p>
-      <a class="btn btn-primary" href="#video">立即查看演示</a>
+    <section class="section screenshots" id="screenshots">
+      <div class="container">
+        <h2 class="section-title reveal" data-i18n="screens.title">应用截图</h2>
+        <p class="section-subtitle reveal" data-i18n="screens.subtitle">点击任意截图可放大查看细节</p>
+
+        <div class="screen-grid">
+          <figure class="screen-item reveal" data-index="0">
+            <img src="应用截图/主界面.png" alt="Main dashboard" data-i18n-alt="screens.alt1" loading="lazy" />
+            <figcaption data-i18n="screens.caption1">主界面</figcaption>
+          </figure>
+          <figure class="screen-item reveal" data-index="1">
+            <img src="应用截图/主界面-选择文件夹后.png" alt="After selecting folder" data-i18n-alt="screens.alt2" loading="lazy" />
+            <figcaption data-i18n="screens.caption2">选择文件夹后</figcaption>
+          </figure>
+          <figure class="screen-item reveal" data-index="2">
+            <img src="应用截图/选择文件类型界面-1.png" alt="Type selection one" data-i18n-alt="screens.alt3" loading="lazy" />
+            <figcaption data-i18n="screens.caption3">选择文件类型 1</figcaption>
+          </figure>
+          <figure class="screen-item reveal" data-index="3">
+            <img src="应用截图/选择文件类型界面-2.png" alt="Type selection two" data-i18n-alt="screens.alt4" loading="lazy" />
+            <figcaption data-i18n="screens.caption4">选择文件类型 2</figcaption>
+          </figure>
+          <figure class="screen-item reveal" data-index="4">
+            <img src="应用截图/文件提取结果界面.png" alt="Extraction result" data-i18n-alt="screens.alt5" loading="lazy" />
+            <figcaption data-i18n="screens.caption5">文件提取结果</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section video" id="video">
+      <div class="container">
+        <h2 class="section-title reveal" data-i18n="video.title">操作演示视频</h2>
+        <p class="section-subtitle reveal" data-i18n="video.subtitle">完整展示从选择到提取结果的流程</p>
+        <div class="video-shell reveal">
+          <video controls preload="metadata" poster="应用截图/主界面.png">
+            <source src="宣传视频/demo.mp4" type="video/mp4" />
+            <source src="宣传视频/录屏2026-02-12 21.09.50.mov" type="video/quicktime" />
+            <span data-i18n="video.fallback">你的浏览器不支持视频播放。</span>
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <section class="section download" id="download">
+      <div class="container download-wrap reveal">
+        <h2 data-i18n="download.title">准备好提升你的文件处理效率了吗？</h2>
+        <p data-i18n="download.desc">现在就通过演示页全面了解 FileExtractor 的工作流与界面体验。</p>
+        <a href="#hero" class="btn btn-primary" data-i18n="download.cta">返回顶部继续浏览</a>
+      </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>© <span id="year"></span> FileExtractor. All rights reserved.</p>
+    <div class="container">
+      <p>© <span id="year"></span> FileExtractor. <span data-i18n="footer.rights">All rights reserved.</span></p>
+    </div>
   </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous">&#10094;</button>
+    <button class="lightbox-next" id="lightboxNext" aria-label="Next">&#10095;</button>
+    <div class="lightbox-content">
+      <img id="lightboxImg" src="" alt="Screenshot preview" />
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
